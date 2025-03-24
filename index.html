@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars Explorer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -18,7 +19,7 @@
                     <a href="#">Materias</a>
                     <a href="#">Comvocatorias y Reglamentos</a>
                 </div>
-                <a href="#" class="join-btn">Iniciar Secion</a>
+                <a href="#" class="join-btn" id="login-button">Iniciar Secion</a>
             </nav>
         </header>
         
@@ -143,5 +144,104 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Login Modal -->
+    <div id="login-modal" class="login-modal" style="display: none;">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="close-modal">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2>Iniciar Sesión</h2>
+            </div>
+            
+            <div class="login-body">
+                <p class="login-instruction">Inicie sesión ingresando su dirección de correo electrónico y contraseña.</p>
+                
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="email@address.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="••••••••••" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group remember-me">
+                        <div class="remember-me-left">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Acuérdate de mí</span>
+                        </div>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Iniciar Sesión</button>
+                </form>
+                
+                <div class="register-link">
+                    <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginButton = document.getElementById('login-button');
+            const loginModal = document.getElementById('login-modal');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // Show modal when login button is clicked
+            loginButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+                // Add small delay to trigger animation
+                setTimeout(() => {
+                    document.querySelector('.login-container').style.opacity = '1';
+                    document.querySelector('.login-container').style.transform = 'translateY(0)';
+                }, 10);
+            });
+            
+            // Close modal when clicking the close button
+            closeModal.addEventListener('click', function() {
+                loginModal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside the container
+            loginModal.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.style.display = 'none';
+                }
+            });
+            
+            // Toggle password visibility
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordInput = document.getElementById('password');
+            
+            if (togglePassword && passwordInput) {
+                togglePassword.addEventListener('click', function() {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    this.classList.toggle('fa-eye');
+                    this.classList.toggle('fa-eye-slash');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

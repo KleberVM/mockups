@@ -1,0 +1,373 @@
+/* Login Modal Styles - Professional Version */
+.login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.login-modal[style*="display: flex"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: modal-in 0.5s forwards;
+}
+
+@keyframes modal-in {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-header {
+    background: linear-gradient(135deg, var(--pri) 0%, var(--sec) 100%);
+    color: white;
+    padding: 25px 20px 20px;
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.user-icon:hover {
+    transform: scale(1.05);
+}
+
+.user-icon i {
+    color: var(--pri);
+    font-size: 22px;
+}
+
+.login-body {
+    padding: 30px 25px;
+}
+
+.login-instruction {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.input-with-icon:focus-within {
+    transform: translateY(-2px);
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 14px;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.input-with-icon:focus-within i {
+    color: var(--for);
+}
+
+.input-with-icon .toggle-password {
+    left: auto;
+    right: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.input-with-icon .toggle-password:hover {
+    color: var(--for);
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 14px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.input-with-icon input:focus {
+    outline: none;
+    border-color: var(--for);
+    box-shadow: 0 3px 8px rgba(0, 129, 223, 0.15);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.remember-me-left {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    transition: .4s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+input:checked + .slider {
+    background-color: var(--for);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.forgot-password {
+    color: var(--for);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    color: var(--sec);
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    background: linear-gradient(to right, var(--pri), var(--sec));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 42, 76, 0.2);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to right, var(--sec), var(--for));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 42, 76, 0.25);
+}
+
+.login-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 42, 76, 0.2);
+}
+
+.login-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.login-btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link a {
+    color: var(--for);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-left: 5px;
+}
+
+.register-link a:hover {
+    color: var(--sec);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        max-width: 90%;
+        margin: 0 15px;
+    }
+    
+    .login-header {
+        padding: 20px 15px 15px;
+    }
+    
+    .login-body {
+        padding: 20px 15px;
+    }
+    
+    .remember-me {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .forgot-password {
+        margin-top: 5px;
+        display: inline-block;
+    }
+}
+
+/* Fix for the remember me section */
+.form-group.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.remember-me span {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Add a close button to the modal */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: white;
+    transform: rotate(90deg);
+}
