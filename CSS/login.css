@@ -21,7 +21,7 @@
     visibility: visible;
 }
 
-.login-container {
+.login-container, #recovery-container {
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
@@ -29,7 +29,8 @@
     max-width: 420px;
     overflow: hidden;
     transform: translateY(20px);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
     animation: modal-in 0.5s forwards;
 }
 

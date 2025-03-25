@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Convocatorias - OH! SANSI</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/convocatoria.css">
+    <link rel="stylesheet" href="sidebar-fix.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/JS/convocatorias.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-school"></i>
+                            <span class="nav-text">Gestión de Colegios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="convocatorias.html" class="nav-link active">
+                            <i class="fas fa-bullhorn"></i>
+                            <span class="nav-text">Gestión de Convocatorias</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-book"></i>
+                            <span class="nav-text">Gestión de Áreas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-plus"></i>
+                            <span class="nav-text">Registro (Inscripción)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span class="nav-text">Estadísticas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span class="nav-text">Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="brand">
+                    <div class="logo-container">
+                        <img src="logo.svg" alt="Logo" class="logo-img">
+                    </div>
+                    <h1>OH SANSI</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </div>
+                    <div class="user-profile">
+                        <span class="user-name">Guilder Paredes</span>
+                        <span class="user-role">Admin General</span>
+                        <img src="profile.jpg" alt="Profile" class="profile-img">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Announcements Content -->
+            <div class="announcements-content">
+                <div class="announcements-section">
+                    <div class="section-header">
+                        <h2>Gestión de Convocatorias</h2>
+                        <div class="section-actions">
+                            <div class="search-container">
+                                <input type="text" placeholder="Buscar convocatoria..." class="search-input">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <div class="sort-controls">
+                                <button class="sort-btn" title="Ordenar Ascendente/Descendente">
+                                    <i class="fas fa-sort"></i>
+                                </button>
+                            </div>
+                            <div class="export-controls">
+                                <button class="export-btn" title="Descargar PDF">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </button>
+                                <button class="export-btn" title="Descargar Excel">
+                                    <i class="fas fa-file-excel"></i> Excel
+                                </button>
+                            </div>
+                            <button class="add-btn" id="newAnnouncementBtn" title="Nueva convocatoria">
+                                <i class="fas fa-plus"></i> Nueva Convocatoria
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Fecha de Creación</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Fecha Fin</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Olimpiada de Matemáticas 2024</td>
+                                    <td>15 Dic, 2023</td>
+                                    <td>01 Feb, 2024</td>
+                                    <td>30 Mar, 2024</td>
+                                    <td>
+                                        <span class="status-badge draft">Borrador</span>
+                                    </td>
+                                    <td class="actions-cell">
+                                        <button class="action-btn edit-btn" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn publish-btn" title="Publicar">
+                                            <i class="fas fa-upload"></i>
+                                        </button>
+                                        <button class="action-btn delete-btn" title="Eliminar">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Olimpiada de Física 2024</td>
+                                    <td>10 Dic, 2023</td>
+                                    <td>15 Feb, 2024</td>
+                                    <td>15 Abr, 2024</td>
+                                    <td>
+                                        <span class="status-badge published">Publicada</span>
+                                    </td>
+                                    <td class="actions-cell">
+                                        <button class="action-btn edit-btn" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn version-btn" title="Nueva versión">
+                                            <i class="fas fa-code-branch"></i>
+                                        </button>
+                                        <button class="action-btn cancel-btn" title="Cancelar">
+                                            <i class="fas fa-ban"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Olimpiada de Química 2024</td>
+                                    <td>05 Dic, 2023</td>
+                                    <td>10 Feb, 2024</td>
+                                    <td>10 Abr, 2024</td>
+                                    <td>
+                                        <span class="status-badge cancelled">Cancelada</span>
+                                    </td>
+                                    <td class="actions-cell">
+                                        <button class="action-btn view-btn" title="Ver detalles">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Announcement Modal -->
+            <div class="modal" id="newAnnouncementModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Nueva Convocatoria</h2>
+                        <button class="close-btn" id="closeModal">&times;</button>
+                    </div>
+                    <form class="announcement-form">
+                        <div class="form-group">
+                            <label for="announcementName">Nombre de la Convocatoria</label>
+                            <input type="text" id="announcementName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate">Fecha de Inicio</label>
+                            <input type="date" id="startDate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">Fecha de Fin</label>
+                            <input type="date" id="endDate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea id="description" class="form-control" required></textarea>
+                        </div>
+                        
+                        <!-- Areas and Categories Section -->
+                        <div class="form-section">
+                            <h3>Áreas y Categorías</h3>
+                            <div id="areasContainer">
+                                <div class="area-entry">
+                                    <div class="area-header">
+                                        <select class="form-control area-select">
+                                            <option value="">Seleccionar Área</option>
+                                            <option value="matematicas">Matemáticas</option>
+                                            <option value="fisica">Física</option>
+                                            <option value="quimica">Química</option>
+                                            <option value="informatica">Informática</option>
+                                            <option value="robotica">Robótica</option>
+                                        </select>
+                                        <button type="button" class="remove-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="categories-container">
+                                        <div class="category-entry">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <select class="form-control category-select">
+                                                    <option value="">Seleccionar Categoría</option>
+                                                    <option value="primaria">Primaria</option>
+                                                    <option value="secundaria">Secundaria</option>
+                                                    <option value="avanzado">Avanzado</option>
+                                                </select>
+                                                <button type="button" class="remove-btn">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2 add-category-btn">
+                                            <i class="fas fa-plus"></i> Agregar Categoría
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm" id="addAreaBtn">
+                                <i class="fas fa-plus"></i> Agregar Área
+                            </button>
+                        </div>
+
+                        <!-- Requirements Section -->
+                        <div class="form-section">
+                            <h3>Requisitos</h3>
+                            <div id="requirementsContainer">
+                                <div class="requirement-entry">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control" placeholder="Ingrese un requisito...">
+                                        <button type="button" class="remove-btn">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm" id="addRequirementBtn">
+                                <i class="fas fa-plus"></i> Agregar Requisito
+                            </button>
+                        </div>
+
+                        <!-- Contacts Section -->
+                        <div class="form-section">
+                            <h3>Contactos</h3>
+                            <div id="contactsContainer">
+                                <div class="contact-entry">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control mb-2" placeholder="Nombre del contacto">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="email" class="form-control mb-2" placeholder="Correo electrónico">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="tel" class="form-control mb-2" placeholder="Teléfono">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control mb-2" placeholder="Cargo">
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <button type="button" class="remove-btn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm" id="addContactBtn">
+                                <i class="fas fa-plus"></i> Agregar Contacto
+                            </button>
+                        </div>
+
+                        <!-- Costs Section -->
+                        <div class="form-section">
+                            <h3>Costos de Inscripción</h3>
+                            <div class="costs-grid">
+                                <div class="cost-item">
+                                    <label for="individualCost">Individual</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Bs.</span>
+                                        <input type="number" id="individualCost" class="form-control" min="0" step="0.5" required>
+                                    </div>
+                                </div>
+                                <div class="cost-item">
+                                    <label for="duoCost">Dúo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Bs.</span>
+                                        <input type="number" id="duoCost" class="form-control" min="0" step="0.5" required>
+                                    </div>
+                                </div>
+                                <div class="cost-item">
+                                    <label for="teamCost">Equipo</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Bs.</span>
+                                        <input type="number" id="teamCost" class="form-control" min="0" step="0.5" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle sidebar
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('expanded');
+                    mainContent.classList.toggle('shifted');
+                });
+            }
+
+            // Modal functionality
+            const modal = document.getElementById('newAnnouncementModal');
+            const newAnnouncementBtn = document.getElementById('newAnnouncementBtn');
+            const closeModal = document.getElementById('closeModal');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const announcementForm = document.querySelector('.announcement-form');
+
+            function openModal() {
+                modal.classList.add('show');
+            }
+
+            function closeModal() {
+                modal.classList.remove('show');
+                announcementForm.reset();
+            }
+
+            newAnnouncementBtn.addEventListener('click', openModal);
+            closeModal.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Form submission
+            announcementForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add your form submission logic here
+                closeModal();
+            });
+        });
+    </script>
+</body>
+</html>

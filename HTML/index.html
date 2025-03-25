@@ -26,7 +26,7 @@
         <section class="hero">
             
             <div class="wave-top">
-                <img src="wave-top.svg" alt="Wave Top">
+                <img src="/wave-top.svg" alt="Wave Top">
             </div>
             
             <div class="hero-content">
@@ -35,9 +35,7 @@
                     <p class="quote">"Participa en las Olimpiadas Oh! SanSi 2025 y demuestra tu talento en Matemáticas, Física, Informática, Robótica y más. ¡Gana premios, reconocimiento y diviértete aprendiendo!</p>
                     
                     <div class="cta-buttons">
-                        <a href="registro.html" class="get-started">
-                            <i class="fas fa-user-plus"></i> ¡Inscribirme Ahora!
-                          </a>
+                        <a href="#" class="get-started"><i class="fas fa-user-plus"></i> ¡Inscribirme Ahora!</a>
                         <a href="#" class="watch-video">
                             <i class="fas fa-info-circle"></i> ¡Conoce Más!
                         </a>
@@ -149,7 +147,7 @@
     
     <!-- Login Modal -->
     <div id="login-modal" class="login-modal" style="display: none;">
-        <div class="login-container">
+        <div class="login-container" id="login-container">
             <div class="login-header">
                 <div class="close-modal">
                     <i class="fas fa-times"></i>
@@ -200,6 +198,39 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Password Recovery Container -->
+        <div class="login-container" id="recovery-container" style="display: none;">
+            <div class="login-header">
+                <div class="back-to-login">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="user-icon">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h2>Recuperar Contraseña</h2>
+            </div>
+            
+            <div class="login-body">
+                <p class="login-instruction">Ingrese su correo electrónico y le enviaremos un enlace para restablecer su contraseña.</p>
+                
+                <form class="recovery-form">
+                    <div class="form-group">
+                        <label for="recovery-email">Correo Electrónico</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="recovery-email" placeholder="email@address.com" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Enviar Enlace de Recuperación</button>
+                </form>
+                
+                <div class="register-link">
+                    <p><a href="#" class="back-to-login-link">Volver a Iniciar Sesión</a></p>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script>
@@ -209,11 +240,18 @@
             const closeModal = document.querySelector('.close-modal');
             const loginForm = document.querySelector('.login-form');
             const loginBtn = document.querySelector('.login-btn');
+            const forgotPasswordLink = document.querySelector('.forgot-password');
+            const backToLoginLinks = document.querySelectorAll('.back-to-login, .back-to-login-link');
+            const loginContainer = document.getElementById('login-container');
+            const recoveryContainer = document.getElementById('recovery-container');
+            const recoveryForm = document.querySelector('.recovery-form');
             
             // Show modal when login button is clicked
             loginButton.addEventListener('click', function(e) {
                 e.preventDefault();
                 loginModal.style.display = 'flex';
+                loginContainer.style.display = 'block';
+                recoveryContainer.style.display = 'none';
                 // Add small delay to trigger animation
                 setTimeout(() => {
                     document.querySelector('.login-container').style.opacity = '1';
@@ -224,6 +262,11 @@
             // Close modal when clicking the close button
             closeModal.addEventListener('click', function() {
                 loginModal.style.display = 'none';
+                // Reset containers to initial state
+                setTimeout(() => {
+                    loginContainer.style.display = 'block';
+                    recoveryContainer.style.display = 'none';
+                }, 300);
             });
             
             // Handle form submission
@@ -239,6 +282,50 @@
                     // Redirect to dashboard
                     window.location.href = 'dashboard.html';
                 }, 1000);
+            });
+            
+            // Show recovery form
+            forgotPasswordLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginContainer.style.opacity = '0';
+                loginContainer.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    loginContainer.style.display = 'none';
+                    recoveryContainer.style.display = 'block';
+                    recoveryContainer.style.opacity = '1';
+                    recoveryContainer.style.transform = 'translateY(0)';
+                }, 300);
+            });
+            
+            // Back to login form
+            backToLoginLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    recoveryContainer.style.display = 'none';
+                    loginContainer.style.display = 'block';
+                });
+            });
+            
+            // Handle recovery form submission
+            recoveryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const recoveryBtn = recoveryForm.querySelector('.login-btn');
+                const recoveryEmail = document.getElementById('recovery-email').value;
+                
+                // Add loading state
+                recoveryBtn.textContent = 'Enviando...';
+                recoveryBtn.disabled = true;
+                
+                // Simulate sending recovery email
+                setTimeout(() => {
+                    alert('Si el correo existe en nuestro sistema, recibirás un enlace para restablecer tu contraseña.');
+                    recoveryBtn.textContent = 'Enviar Enlace de Recuperación';
+                    recoveryBtn.disabled = false;
+                    document.getElementById('recovery-email').value = '';
+                    // Return to login form
+                    recoveryContainer.style.display = 'none';
+                    loginContainer.style.display = 'block';
+                }, 2000);
             });
             
             // Toggle password visibility
