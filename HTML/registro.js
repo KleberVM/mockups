@@ -106,7 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
             timer: 2000
         }).then(() => {
             this.reset();
-            // Here you can add redirect logic or additional actions
+            // Fix the redirect path
+            window.location.href = 'dashboard_Estudiante.html';
         });
     });
 });

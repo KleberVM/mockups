@@ -426,3 +426,94 @@ nav {
         max-width: 200px;
     }
 }
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 400px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.registration-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.option-card {
+    text-decoration: none;
+    color: #333;
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #0a1f44;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    background: #e9ecef;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.option-icon {
+    font-size: 2.5rem;
+    color: #0a1f44;
+    margin-bottom: 1rem;
+}
+
+.option-card span {
+    display: block;
+    font-weight: bold;
+    color: #0a1f44;
+}

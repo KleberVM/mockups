@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estudiante</title>
+    <link rel="stylesheet" href="/CSS/dashboard_Estudiante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Toggle Button -->
+        <button class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="menu-items">
+                <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="#"><i class="fas fa-edit"></i> Inscribirse</a>
+                <a href="#"><i class="fas fa-calendar"></i> Calendario</a>
+                <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Bienvenido Carlos</h1>
+                <p class="subtitle">Inscríbete ya una área de las olimpiadas OH! SANSI</p>
+                
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="search" placeholder="Search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="path_to_profile_image.jpg" alt="Carlos Cejas">
+                        <span>Carlos Cejas</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="action-buttons">
+                <button class="btn-primary">Generar Boleta de Pago</button>
+                <button class="btn-secondary">Descargar Formulario</button>
+            </div>
+
+            <div class="status-cards">
+                <div class="card status-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-check"></i>
+                        <h3>Estado de Cuenta</h3>
+                    </div>
+                    <div class="card-content">
+                        <span class="status active">ACTIVO</span>
+                        <p>Desde: 12/02/2023</p>
+                    </div>
+                </div>
+
+                <div class="card upload-card">
+                    <div class="card-header">
+                        <i class="fas fa-upload"></i>
+                        <h3>Subir Comprobante</h3>
+                    </div>
+                    <div class="card-content">
+                        <span class="status completed">COMPLETADO</span>
+                        <p>13/03/2023</p>
+                        <p>Cantidad 2</p>
+                    </div>
+                </div>
+
+                <div class="card responsables-card">
+                    <div class="card-header">
+                        <h3>Mis Responsables</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="responsables-list">
+                            <li>Juan Lopez Quijarro</li>
+                            <li>Daniel Zambrana Rojas</li>
+                            <li>Martin Gonzales Fernandez</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="areas-section">
+                <div class="section-header">
+                    <h2>Areas Inscritas</h2>
+                    <select class="year-select">
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+
+                <table class="areas-table">
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Fecha</th>
+                            <th>Tutor</th>
+                            <th>Departamento</th>
+                            <th>Registrado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Matemática</td>
+                            <td>19 May, 2021 - 10:10 AM</td>
+                            <td>Juan</td>
+                            <td>La Paz</td>
+                            <td>Yes</td>
+                            <td><button class="btn-details">Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>Física</td>
+                            <td>18 May, 2021 - 3:12 PM</td>
+                            <td>Mario</td>
+                            <td>Cochabamba</td>
+                            <td>No</td>
+                            <td><button class="btn-details">Detalles</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="dashboard_Estudiante.js"></script>
+</body>
+</html>
