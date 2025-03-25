@@ -205,6 +205,8 @@
             const loginButton = document.getElementById('login-button');
             const loginModal = document.getElementById('login-modal');
             const closeModal = document.querySelector('.close-modal');
+            const loginForm = document.querySelector('.login-form');
+            const loginBtn = document.querySelector('.login-btn');
             
             // Show modal when login button is clicked
             loginButton.addEventListener('click', function(e) {
@@ -222,25 +224,31 @@
                 loginModal.style.display = 'none';
             });
             
-            // Close modal when clicking outside the container
-            loginModal.addEventListener('click', function(e) {
-                if (e.target === loginModal) {
-                    loginModal.style.display = 'none';
-                }
+            // Handle form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Add loading state
+                loginBtn.textContent = 'Iniciando sesión...';
+                loginBtn.disabled = true;
+            
+                // Simulate login validation (replace with actual authentication)
+                setTimeout(() => {
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                }, 1000);
             });
             
             // Toggle password visibility
             const togglePassword = document.querySelector('.toggle-password');
-            const passwordInput = document.getElementById('password');
+            const passwordInput = document.querySelector('#password');
             
-            if (togglePassword && passwordInput) {
-                togglePassword.addEventListener('click', function() {
-                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                    passwordInput.setAttribute('type', type);
-                    this.classList.toggle('fa-eye');
-                    this.classList.toggle('fa-eye-slash');
-                });
-            }
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
         });
     </script>
 </body>

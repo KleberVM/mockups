@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - OH! SANSI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="sidebar-fix.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span class="nav-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-school"></i>
+                            <span class="nav-text">Gestión de Colegios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-bullhorn"></i>
+                            <span class="nav-text">Gestión de Convocatorias</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-book"></i>
+                            <span class="nav-text">Gestión de Áreas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user-plus"></i>
+                            <span class="nav-text">Registro (Inscripción)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span class="nav-text">Estadísticas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span class="nav-text">Configuración</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="brand">
+                    <div class="logo-container">
+                        <img src="logo.svg" alt="Logo" class="logo-img">
+                    </div>
+                    <h1>OH SANSI</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </div>
+                    <div class="user-profile">
+                        <span class="user-name">Guilder Paredes</span>
+                        <span class="user-role">Admin General</span>
+                        <img src="profile.jpg" alt="Profile" class="profile-img">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card primary">
+                        <div class="stat-info">
+                            <h3>Total inscritos postulantes</h3>
+                            <div class="stat-value">21 324</div>
+                            <div class="stat-date">12-2023</div>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card secondary">
+                        <div class="stat-info">
+                            <h3>Total inscritos tutores</h3>
+                            <div class="stat-value">221,324.50</div>
+                            <div class="stat-date">12-2023</div>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card tertiary">
+                        <div class="stat-info">
+                            <h3>Total pagos pendientes</h3>
+                            <div class="stat-value">16 703</div>
+                            <div class="stat-date">12-2023</div>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card quaternary">
+                        <div class="stat-info">
+                            <h3>Total pagados</h3>
+                            <div class="stat-value">12.8%</div>
+                            <div class="stat-date">12-2023</div>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Estadísticas de Pagos</h3>
+                            <button class="settings-btn">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
+                        <div class="chart-content">
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color students"></span>
+                                    <span>Estudiantes</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color tutors"></span>
+                                    <span>Tutores</span>
+                                </div>
+                            </div>
+                            <div class="chart-placeholder">
+                                <!-- Chart would be rendered here with a library like Chart.js -->
+                                <img src="chart-placeholder.svg" alt="Chart" class="chart-img">
+                            </div>
+                            <div class="chart-months">
+                                <span>Ene</span>
+                                <span>Feb</span>
+                                <span>Mar</span>
+                                <span>Abr</span>
+                                <span>May</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Categoría Popular</h3>
+                        </div>
+                        <div class="chart-content">
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color electronics"></span>
+                                    <span>Electrónica</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color mathematics"></span>
+                                    <span>Matemática</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color physics"></span>
+                                    <span>Física</span>
+                                </div>
+                            </div>
+                            <div class="donut-chart-placeholder">
+                                <!-- Donut chart would be rendered here -->
+                                <img src="donut-chart-placeholder.svg" alt="Donut Chart" class="chart-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schools Registration Section -->
+                <div class="schools-section">
+                    <div class="section-header">
+                        <h3>Registrar Colegios</h3>
+                        <div class="section-actions">
+                            <div class="search-container">
+                                <input type="text" placeholder="Buscar..." class="search-input">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <button class="filter-btn">
+                                <i class="fas fa-filter"></i>
+                            </button>
+                            <button class="add-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th>Teléfono</th>
+                                    <th>Departamento</th>
+                                    <th>Registrado</th>
+                                    <th>Opciones</th>
+                                    <th>Detalles</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>San Martin de Porres</td>
+                                    <td>15 May, 2021 - 10:10 AM</td>
+                                    <td>251-661-5362</td>
+                                    <td>Lapaz</td>
+                                    <td>
+                                        <span class="status-badge yes">Yes</span>
+                                    </td>
+                                    <td>
+                                        <button class="options-btn">Options</button>
+                                    </td>
+                                    <td>
+                                        <button class="details-btn">Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Eduardo Avaroa</td>
+                                    <td>18 May, 2021 - 3:12 PM</td>
+                                    <td>171-534-1262</td>
+                                    <td>Cochabamba</td>
+                                    <td>
+                                        <span class="status-badge no">No</span>
+                                    </td>
+                                    <td>
+                                        <button class="options-btn">Options</button>
+                                    </td>
+                                    <td>
+                                        <button class="details-btn">Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Mariscal Sucre</td>
+                                    <td>17 May, 2021 - 2:15 PM</td>
+                                    <td>874-661-5110</td>
+                                    <td>Beni</td>
+                                    <td>
+                                        <span class="status-badge yes">Yes</span>
+                                    </td>
+                                    <td>
+                                        <button class="options-btn">Options</button>
+                                    </td>
+                                    <td>
+                                        <button class="details-btn">Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle sidebar
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('expanded');
+                    mainContent.classList.toggle('shifted');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
