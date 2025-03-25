@@ -19,9 +19,34 @@
                     <a href="#">Materias</a>
                     <a href="#">Comvocatorias y Reglamentos</a>
                 </div>
-                <a href="#" class="join-btn" id="login-button">Iniciar Secion</a>
+                <div class="auth-buttons">
+                    <a href="#" class="join-btn" id="login-button">Iniciar Sesión</a>
+                    <a href="#" class="join-btn" id="register-button">Registrarse</a>
+                </div>
             </nav>
         </header>
+
+        <!-- Registration Modal -->
+        <div id="registro-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Registro</h2>
+                <div class="registration-options">
+                    <a href="registro_Estudiante.html" class="option-card">
+                        <div class="option-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <span>Estudiante</span>
+                    </a>
+                    <a href="registro_Tutor.html" class="option-card">
+                        <div class="option-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <span>Tutor</span>
+                    </a>
+                </div>
+            </div>
+        </div>
         
         <section class="hero">
             
@@ -35,9 +60,9 @@
                     <p class="quote">"Participa en las Olimpiadas Oh! SanSi 2025 y demuestra tu talento en Matemáticas, Física, Informática, Robótica y más. ¡Gana premios, reconocimiento y diviértete aprendiendo!</p>
                     
                     <div class="cta-buttons">
-                        <a href="registro.html" class="get-started">
+                        <a href="#" class="get-started" id="register-now">
                             <i class="fas fa-user-plus"></i> ¡Inscribirme Ahora!
-                          </a>
+                        </a>
                         <a href="#" class="watch-video">
                             <i class="fas fa-info-circle"></i> ¡Conoce Más!
                         </a>
@@ -250,6 +275,87 @@
                 passwordInput.setAttribute('type', type);
                 this.classList.toggle('fa-eye');
                 this.classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginButton = document.getElementById('login-button');
+            const loginModal = document.getElementById('login-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const loginForm = document.querySelector('.login-form');
+            const loginBtn = document.querySelector('.login-btn');
+            
+            // Show modal when login button is clicked
+            loginButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'flex';
+                // Add small delay to trigger animation
+                setTimeout(() => {
+                    document.querySelector('.login-container').style.opacity = '1';
+                    document.querySelector('.login-container').style.transform = 'translateY(0)';
+                }, 10);
+            });
+            
+            // Close modal when clicking the close button
+            closeModal.addEventListener('click', function() {
+                loginModal.style.display = 'none';
+            });
+            
+            // Handle form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Add loading state
+                loginBtn.textContent = 'Iniciando sesión...';
+                loginBtn.disabled = true;
+            
+                // Simulate login validation (replace with actual authentication)
+                setTimeout(() => {
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+            });
+            
+            // Toggle password visibility
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordInput = document.querySelector('#password');
+            
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Registration Modal Functionality
+            const registerNowBtn = document.querySelector('.get-started');
+            const registerBtn = document.getElementById('register-button');
+            const registroModal = document.getElementById('registro-modal');
+            const closeRegistroBtn = registroModal.querySelector('.close');
+
+            function showRegistroModal(e) {
+                e.preventDefault();
+                registroModal.style.display = 'block';
+            }
+
+            // Add click event listeners
+            registerNowBtn.addEventListener('click', showRegistroModal);
+            registerBtn.addEventListener('click', showRegistroModal);
+
+            // Close modal when clicking X
+            closeRegistroBtn.addEventListener('click', () => {
+                registroModal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', (e) => {
+                if (e.target === registroModal) {
+                    registroModal.style.display = 'none';
+                }
             });
         });
     </script>
