@@ -1,8 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.querySelector('.sidebar-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    
-    toggleButton.addEventListener('click', () => {
-        sidebar.classList.toggle('hidden');
-    });
+document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('hidden');
+    document.querySelector('.main-content').classList.toggle('expanded');
 });

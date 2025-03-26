@@ -1,7 +1,7 @@
 .form-wrapper {
     min-height: 100vh;
     padding: 2rem;
-    background: linear-gradient(135deg, #0a1f44 0%, #1a3a6d 100%);
+    background: white;
 }
 
 .form-container {
@@ -16,17 +16,26 @@
 .form-header {
     text-align: center;
     margin-bottom: 2rem;
+    background-color: #0a1f44;
+    color: white;
+    padding: 1rem;
+    border-radius: 1px;
+    margin: 0.5rem -2rem 2rem -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .form-header i {
-    font-size: 3rem;
-    color: #0a1f44;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0;
 }
 
 .form-header h2 {
-    color: #0a1f44;
-    font-size: 2rem;
+    color: white;
+    margin: 0;
 }
 
 .form-row {
@@ -87,8 +96,35 @@
     pointer-events: none;
 }
 
+/* Remove red border for invalid inputs */
+.input-with-icon input:invalid:not(:placeholder-shown),
+.select-wrapper select:invalid:not(:placeholder-shown) {
+    border-color: #ddd;
+}
+
+/* Password input styling */
 .password-input {
     position: relative;
+    width: 100%;
+}
+
+.password-input input {
+    width: 100%;
+    padding: 0.8rem 2.5rem;
+    padding-right: 3rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.password-input i.fas {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
 }
 
 .password-input i.toggle-password {
@@ -98,6 +134,42 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: #666;
+    transition: color 0.3s ease;
+}
+
+.password-input i.toggle-password:hover {
+    color: #0a1f44;
+}
+
+.password-input input:focus {
+    border-color: #0a1f44;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(10, 31, 68, 0.1);
+}
+
+/* Password strength indicator */
+.password-strength {
+    height: 3px;
+    margin-top: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    background-color: #ddd;
+}
+
+.password-strength.weak {
+    background-color: #ff4444;
+    width: 33%;
+}
+
+.password-strength.medium {
+    background-color: #ffa700;
+    width: 66%;
+}
+
+.password-strength.strong {
+    background-color: #00c851;
+    width: 100%;
 }
 
 .terms-group {
@@ -153,15 +225,44 @@
     text-decoration: underline;
 }
 
-/* File input styling */
-input[type="file"] {
-    padding: 0.6rem 1rem 0.6rem 2.5rem;
+/* File input modern styling */
+.input-with-icon input[type="file"] {
+    padding: 0.8rem 2.5rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-/* Error states */
-.input-with-icon input:invalid:not(:placeholder-shown),
-.select-wrapper select:invalid:not(:placeholder-shown) {
-    border-color: #dc3545;
+.input-with-icon input[type="file"]::file-selector-button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #0a1f44;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-with-icon input[type="file"]::file-selector-button:hover {
+    background-color: #1a3a6d;
+}
+
+.input-with-icon.file-input {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.input-with-icon.file-input:hover {
+    border-color: #0a1f44;
+    background-color: rgba(10, 31, 68, 0.05);
+}
+
+.input-with-icon.file-input i {
+    font-size: 1.2rem;
 }
 
 /* Responsive design */

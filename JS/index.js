@@ -1,20 +1,18 @@
+
+//Cierra el modal de registro estudiante tutor
 document.addEventListener('DOMContentLoaded', function() {
-    const registerButton = document.getElementById('register-button');
-    const modal = document.getElementById('registro-modal');
-    const closeBtn = modal.querySelector('.close');
+    const registroModal = document.getElementById('registro-modal');
+    const closeRegistroBtn = registroModal.querySelector('.close');
 
-    registerButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.style.display = 'block';
+    // Close modal when clicking the "X"
+    closeRegistroBtn.addEventListener('click', () => {
+        registroModal.style.display = 'none';
     });
 
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(e) {
-        if (e.target == modal) {
-            modal.style.display = 'none';
+    // Optional: Close modal when clicking outside the modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === registroModal) {
+            registroModal.style.display = 'none';
         }
     });
 });

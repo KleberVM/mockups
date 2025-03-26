@@ -46,6 +46,18 @@
     flex: 1;
 }
 
+/* Password fields container */
+.password-fields {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.password-fields .input-group {
+    flex: 1;
+    min-width: 0; /* Prevents overflow */
+}
+
 label {
     display: block;
     margin-bottom: 0.5rem;
@@ -53,42 +65,129 @@ label {
     font-size: 0.9rem;
 }
 
-input, select {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+.input-with-icon {
+    position: relative;
 }
 
-input:focus, select:focus {
+.input-with-icon input,
+.select-wrapper select {
+    width: 100%;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: #f8f9fa;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    z-index: 1;
+}
+
+.password-input {
+    position: relative;
+    width: 100%;
+}
+
+.password-input input {
+    width: 100%;
+    padding: 0.8rem 2.5rem;
+    padding-right: 3rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.password-input i.fas {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.password-input i.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.password-input i.toggle-password:hover {
+    color: #0a1f44;
+}
+
+.password-input input:focus {
     border-color: #0a1f44;
     outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(10, 31, 68, 0.1);
+}
+
+/* Password strength indicator */
+.password-strength {
+    height: 3px;
+    margin-top: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    background-color: #ddd;
+}
+
+.password-strength.weak {
+    background-color: #ff4444;
+    width: 33%;
+}
+
+.password-strength.medium {
+    background-color: #ffa700;
+    width: 66%;
+}
+
+.password-strength.strong {
+    background-color: #00c851;
+    width: 100%;
 }
 
 .select-wrapper {
     position: relative;
 }
 
-/* Remove select-wrapper icon styles*/
-.date-input {
-    position: relative;
+.select-wrapper select {
+    appearance: none;
+    padding-right: 2.5rem;
+    cursor: pointer;
 }
 
-/* Remove date-input icon styles*/
-
-.password-input {
-    position: relative;
-}
-
-.password-input i {
+.select-wrapper i {
     position: absolute;
-    right: 1rem;
+    left: 1rem;
     top: 50%;
     transform: translateY(-50%);
     color: #666;
-    cursor: pointer;
+    pointer-events: none;
+}
+
+/* Focus states */
+.input-with-icon input:focus,
+.select-wrapper select:focus {
+    border-color: #0a1f44;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Date input specific styling */
+input[type="date"] {
+    padding-left: 2.5rem;
 }
 
 .date-input {
