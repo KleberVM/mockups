@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estudiante</title>
+    <link rel="stylesheet" href="/CSS/dashboard_Estudiante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Toggle Button -->
+        <button class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="menu-items">
+                <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="Subir_Lista.html"><i class="fas fa-edit"></i> Subir lista</a>
+                <a href="#"><i class="fas fa-calendar"></i> Calendario</a>
+                <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Bienvenido Carlos</h1>
+                <p class="subtitle">Inscríbete ya una área de las olimpiadas OH! SANSI</p>
+                
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="search" placeholder="Search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="path_to_profile_image.jpg" alt="Carlos Cejas">
+                        <span>Carlos Cejas</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="action-buttons">
+                <button class="btn-document btn-payment">
+                    <i class="fas fa-file-pdf"></i>
+                    Generar Orden de Pago
+                </button>
+                <button class="btn-document btn-download">
+                    <i class="fas fa-download"></i>
+                    Descargar Formulario
+                </button>
+            </div>
+
+            <div class="status-cards">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Estado de Cuenta</h3>
+                        <span class="status active">Activo</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="date-info">
+                            <i class="fas fa-calendar"></i> Desde: 12/02/2023
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Subir Comprobante</h3>
+                        <span class="status completed">Completado</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="date-info">
+                            <i class="fas fa-check-circle"></i> 13/03/2023
+                        </div>
+                        <span class="quantity-badge">
+                            <i class="fas fa-file-upload"></i> Cantidad: 2
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Mis Responsables</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="responsables-simple">
+                            Juan Lopez Quijarro<br>
+                            Daniel Zambrana Rojas<br>
+                            Martin Gonzales Reque
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="areas-section">
+                <div class="section-header">
+                    <h2>Areas Inscritas</h2>
+                    <select class="year-select">
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+
+                <table class="areas-table">
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Fecha</th>
+                            <th>Tutor</th>
+                            <th>Departamento</th>
+                            <th>Registrado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Matemática</td>
+                            <td>19 May, 2021 - 10:10 AM</td>
+                            <td>Juan</td>
+                            <td>La Paz</td>
+                            <td>Yes</td>
+                            <td><button class="btn-details">Detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td>Física</td>
+                            <td>18 May, 2021 - 3:12 PM</td>
+                            <td>Mario</td>
+                            <td>Cochabamba</td>
+                            <td>No</td>
+                            <td><button class="btn-details">Detalles</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="location-section">
+                <div class="location-details">
+                    <h3><i class="fas fa-map-marker-alt"></i> Lugar de la Prueba</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span>Universidad Mayor de San Simón - Facultad de Ciencias y Tecnología</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>8:00 AM - 12:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="maps-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5758493392544!2d-66.14752728255615!3d-17.39395059999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373e402d6d79d%3A0x2f59a5a1d8239624!2sFacultad%20de%20Ciencias%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2sbo!4v1637089876543!5m2!1ses!2sbo"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="dashboard_Estudiante.js"></script>
+</body>
+</html>

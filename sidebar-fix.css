@@ -1,0 +1,41 @@
+.sidebar {
+    width: 80px;
+    background-color: var(--pri);
+    color: white;
+    transition: all 0.3s ease;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.sidebar.expanded {
+    width: 250px;
+}
+
+.nav-text {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+.sidebar.expanded .nav-text {
+    opacity: 1;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.nav-link i {
+    font-size: 20px;
+    min-width: 40px;
+}

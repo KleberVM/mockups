@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Estudiante</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/CSS/inscripcion_Estudiante.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add this in the head section -->
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    </head>
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="menu-items">
+                <a href="dashboard_Estudiante.html"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="#" class="active"><i class="fas fa-edit"></i> Inscribirse</a>
+                <a href="#"><i class="fas fa-calendar"></i> Calendario</a>
+                <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="header-right">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="/assets/profile-placeholder.jpg" alt="Profile">
+                        <span>Carlos Cejas</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <h2>Formulario de Inscripción</h2>
+                
+                <form id="inscriptionForm">
+                    <!-- Academic Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-book"></i> Agregar Áreas</h3>
+                        <div class="areas-container">
+                            <div class="area-group" id="area-group-1">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="colegio"><i class="fas fa-building"></i> Colegio</label>
+                                        <div class="input-with-icon">
+                                            <select id="colegio" class="select2-colegio" required>
+                                                <option value="">Buscar colegio...</option>
+                                                <option value="col1">Colegio San Calixto</option>
+                                                <option value="col2">Colegio La Salle</option>
+                                                <option value="col3">Colegio San Ignacio</option>
+                                                <option value="col4">Colegio Don Bosco</option>
+                                                <option value="col5">Colegio Marista</option>
+                                                <option value="col6">Colegio Santa Ana</option>
+                                            </select>
+                                            <span class="error-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <h3><i class="fas fa-book"></i> Agregar Áreas</h3>
+                                <div class="form-row">
+                                    <div class="input-group area-selection">
+                                        <label for="area-1"><i class="fas fa-book"></i> Área</label>
+                                        <div class="input-with-icon">
+                                            <select id="area-1" class="area-select" required>
+                                                <option value="">Seleccionar Área</option>
+                                                <option value="matematicas">Matemáticas</option>
+                                                <option value="fisica">Física</option>
+                                            </select>
+                                            <span class="error-message"></span>
+                                        </div>
+                                        <button type="button" class="btn-add-area" title="Agregar otra área">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-row categoria-grado-row" style="display: none;">
+                                    <div class="input-group">
+                                        <label for="categoria-1"><i class="fas fa-layer-group"></i> Categoría</label>
+                                        <div class="input-with-icon">
+                                            <select id="categoria-1" required>
+                                                <option value="">Seleccionar Categoría</option>
+                                            </select>
+                                            <span class="error-message"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="grado-1"><i class="fas fa-graduation-cap"></i> Grado</label>
+                                        <div class="input-with-icon">
+                                            <select id="grado-1" required>
+                                                <option value="">Seleccionar Grado</option>
+                                            </select>
+                                            <span class="error-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-address-card"></i> Información de Contacto</h3>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="celular"><i class="fas fa-phone"></i> Celular</label>
+                                <div class="input-with-icon">
+                                    <input type="tel" id="celular" placeholder="70707070" maxlength="8" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="direccion"><i class="fas fa-map-marker-alt"></i> Dirección</label>
+                                <div class="input-with-icon">
+                                    <input type="text" id="direccion" placeholder="Mínimo 10 caracteres" minlength="10" required>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutor Information -->
+                    <div class="form-section" id="tutorSection">
+                        <h3><i class="fas fa-users"></i> Información del Tutor</h3>
+                        <div class="tutor-container">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <label for="tokenTutor"><i class="fas fa-key"></i> Token del Tutor</label>
+                                    <div class="input-with-icon">
+                                        <input type="text" id="tokenTutor" placeholder="Ingrese el token del tutor" required>
+                                        <span class="error-message"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="addTutor" class="btn-add-tutor">
+                            <i class="fas fa-plus"></i> Agregar otro tutor
+                        </button>
+
+                        <!-- Payment Section -->
+                        <div class="payment-section">
+                            <div class="payment-buttons">
+                                <button type="button" id="generatePayment" class="btn-payment">
+                                     Guardar
+                                </button>
+                                <button type="button" id="downloadPayment" class="btn-payment" disabled>
+                                    <i class="fas fa-download"></i> Generar Orden de Pago
+                                </button>
+                            </div>
+                            
+                            <div class="upload-receipt" style="display: none;">
+                                <div class="form-row">
+                                    <div class="input-group">
+                                        <label for="comprobante">
+                                            <i class="fas fa-receipt"></i> Comprobante de Pago
+                                        </label>
+                                        <div class="input-with-icon">
+                                            <input type="file" id="comprobante" accept=".pdf,.jpg,.jpeg,.png" required>
+                                            <span class="error-message"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="button-group">
+                        <button type="button" class="btn-cancel">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-check"></i> Terminar Inscripción
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/JS/inscripcion_Estudiante.js"></script>
+</body>
+</html>
